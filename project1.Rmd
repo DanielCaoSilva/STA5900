@@ -1,0 +1,25 @@
+---
+title: "5900 Project 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## R Markdown
+
+Sample proportion = p = Σ( Nh / N ) * ph
+
+```{r}
+data = read.csv('C:/Users/dcaos/OneDrive/Desktop/maskData.csv')
+total = sum(data$total)
+obs = sum(data$mask)
+sample_p=obs/total
+p = 0.65
+z_score = (sample_p-p)/(sqrt((p*(1-p))/total))
+pnorm(z_score)
+```
+
+
